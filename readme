@@ -1,0 +1,33 @@
+1. <textarea placeholder="Message..." class="message-input"></textarea>
+
+Câu lệnh này giúp tạo đoạn tin nhắn với chữ mờ.
+
+2. overflow: hidden;
+
+Làm cho các phần tử không bị tràn
+
+3. gap: 10px;
+Dùng trong flex , tạo khoảng cách các phần tử là 10px
+
+4.fill: #5350C4;
+Dùng trong svg có tác dụng bôi màu cho các thành phần trong svg như path,...
+
+
+5.flex-shrink: 0;
+Dùng trong flex và không làm co phần tử
+
+6. .chat-header #close-chatbot{
+
+}
+
+Cái này giúp trỏ đến class và sâu hơn là id của phần tử muốn truyền
+
+7. resize: none;
+
+Ngăn người dùng thay đổi kích thước phần tử, day dùng với <textarea name="" id=""></textarea>
+
+8..chat-footer .chat-form:focus-within {
+    outline: 2px solid #5350C4;
+}
+
+Viec tro vao phan tu nao do giup no co them thuoc tinh css nay
