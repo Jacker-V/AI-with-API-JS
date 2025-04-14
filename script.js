@@ -6,6 +6,8 @@ const fileUploadWrapper = document.querySelector(".file-upload-wrapper");
 const fileCancelButton = document.querySelector("#file-cancel");
 const chatbotToggler = document.querySelector("#chatbot-toggler");
 const closeChatbot = document.querySelector("#close-chatbot");
+const weatherToggler = document.querySelector("#chatbot-toggler-weather");
+
 
 const API_KEY = "AIzaSyCRX4ytbJXNhdH3OSJ36NWMPgZSEWXEyS4"; 
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
@@ -171,3 +173,4 @@ sendMessageButton.addEventListener("click", (e)=> handleOutgoingMessage(e));
 document.querySelector("#file-upload").addEventListener("click",() => fileInput.click());
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 closeChatbot.addEventListener("click",() => document.body.classList.remove("show-chatbot"));
+weatherToggler.addEventListener("click", () => document.body.classList.toggle("show-weather"));

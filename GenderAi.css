@@ -1,0 +1,359 @@
+/* Gán font chữ  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+    /* font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #5C56E1;
+    --color-primary-dark: #5b21b6;
+    --color-accent: #8B5CF6;
+    --color-card: #FFFFFF;
+    --color-input: #f1f1f1;
+    --color-text: #09090E;
+    --color-placeholder: #5C5A87;
+    --color-border: #D4D4ED;
+    --color-gradient: linear-gradient(135deg, #5C56E1, #8B5CF6);
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--color-text);
+    background: linear-gradient(#EEEEFF,#C8C7FF);
+    padding: 15px;
+
+}
+
+.container{
+    width: 900px;
+    background: var(--color-card);
+    padding: 32px;
+    border-radius: 23px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--color-gradient);
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo-wrapper {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.header .logo-wrapper .logo {
+    height: 55px;
+    width: 56px;
+    display: flex;
+    color: #fff;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gradient);
+}
+
+.header .logo-wrapper h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+
+}
+
+.header .theme-toggle {
+    height: 43px;
+    width: 43px;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    font-size: 1.05rem;
+    cursor: pointer;
+    display: flex;
+    color: var(--color-placeholder);
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.header .theme-toggle:hover{
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-content{
+    margin: 35px 0 5px;
+}
+
+.main-content .prompt-container{
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.prompt-container .prompt-input{
+    width: 100%;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    min-height: 120px;
+    padding: 16px 20px;
+    background: var(--color-border);
+    border-radius: 15px;
+}
+
+.prompt-container .prompt-input::placeholder {
+    color: var(--color-placeholder);
+}
+
+.prompt-container .prompt-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+}
+
+.prompt-container .prompt-btn{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    height: 35px;
+    width: 35px;
+    border: none;
+    font-size: 0.75rem;
+    border-radius: 50%;
+    opacity: 0.8;
+    color: var(--color-card);
+    background: var(--color-gradient);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.prompt-container .prompt-btn:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-content .prompt-actions {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: 1.2fr 1fr 1.1fr 1fr;
+    /* Xác định phần trăm kích thước các cột trong không gian với tỉ lệ như trên */
+
+}
+
+.prompt-actions .select-wrapper {
+    position: relative;
+}
+
+.prompt-actions .select-wrapper::after {
+    /* Thêm mũi tên chỉ xuống trong phần select */
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    font-size: 0.9rem;
+    color: var(--color-placeholder);
+    padding-left: 7px;
+    pointer-events: none;
+    background: var(--color-input);
+    transform: translateY(-50%);
+}
+
+.prompt-actions :where(.custom-select, .generate-btn) {
+    /* Áp dụng Css cho các phần tử có 1 trong 2 class con */
+    cursor: pointer;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.prompt-actions .custom-select {
+    width: 100%;
+    outline: none;
+    height: 100%;
+    appearance: none;
+    /* được dùng để loại bỏ kiểu mặc định của trình duyệt trên một số phần tử form như <input>, <select>, <button>, v.v. */
+    /* Gỡ bỏ giao diện mặc định (nút mũi tên, đường viền, kiểu nút...) */
+}
+
+.prompt-actions .custom-select:is(:focus, :hover) {
+    /* Khi focus hay chỉ vào sẽ có hiệu ứng css */
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.prompt-actions .generate-btn {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border: none;
+    color: #fff;
+    background: var(--color-gradient);
+}
+
+.prompt-actions .generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
+}
+
+.main-content .gallery-grid{
+    display: grid;
+    gap: 15px;
+    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+
+}
+
+.gallery-grid .img-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /* cố định tỉ lệ chiêu cao và chiều dài là 1:1 */
+    aspect-ratio: 1;
+    background: var(--color-input);
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    transition: all 0.5s ease;
+}
+
+.gallery-grid .img-card:not(.loading, .error):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid .img-card .result-img{
+    width: 100%;
+    height: 100%;
+    /* Ảnh/video sẽ được cắt và phóng to vừa đủ để bao phủ toàn bộ khung chứa, mà không bị méo tỷ lệ.
+Tuy nhiên, phần dư sẽ bị cắt đi nếu cần. */
+    object-fit: cover;
+}
+
+.gallery-grid .img-card:is(.loading, .error) :is(.result-img, .img-overlay){
+    display: none;
+}
+
+
+.gallery-grid .img-card .img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-end;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    transition: all 0.3s ease;
+}
+
+.gallery-grid .img-card:hover .img-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gallery-grid .img-card .img-download-btn {
+    height: 45px;
+    width: 45px;
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.gallery-grid .img-card .img-download-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.4);
+   
+}
+
+.gallery-grid .img-card .status-container {
+    padding: 15px;
+    display: none;
+    gap: 13px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-grid .img-card:where(.loading, .error) .status-container{
+    display: flex;
+}
+
+.gallery-grid .img-card.loading .status-container i,
+.gallery-grid .img-card.error .spinner {
+    display: none;
+}
+
+.gallery-grid .img-card.error .status-container i {
+    font-size: 1.7rem;
+    color: #ef4444;
+}
+.gallery-grid .img-card.loading .spinner{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to{
+        transform: rotate(360deg);
+    }
+
+}
+
+.gallery-grid .img-card .status-text {
+    color: var(--color-placeholder);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+
+
