@@ -562,7 +562,41 @@ body.show-emoji-picker em-emoji-picker{
 
 /* Responsive media for mobile */
 
+@media (max-width : 520px){
+    #chatbot-toggler{
+        right: 20px;
+        bottom: 20px;
+    }
+    #chatbot-toggler-wether{
+        right: 20px;
+        bottom: 100px;
+    }
 
+    .chatbot-popup{
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .chatbot-popup .chat-header{
+        padding: 12px 15px;
+    }
+
+    .chat-body{
+        height: calc(90% - 55px);
+        padding: 25px 15px;
+    }
+
+    .chat-footer{
+        padding: 10px 15px 15px;
+    }
+
+    .chat-form .file-upload-wrapper.file-uploaded #file-cancel{
+        opacity: 0;
+    }
+}
 
 :root {
     --color-primary: #5C56E1;
@@ -934,51 +968,3 @@ Tuy nhiên, phần dư sẽ bị cắt đi nếu cần. */
     text-align: center;
 }
 
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-    position: relative;
-    padding: 20px;
-    border-radius: 16px;
-    margin-top: 20px;
-    box-shadow: none;
-    height: auto;
-  }
-
-  .header h1 {
-    font-size: 1.4rem;
-  }
-
-  .main-content .prompt-actions {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .prompt-actions .generate-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  }
-
-  .chatbot-popup {
-    right: 0;
-    left: 0;
-    bottom: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
-
-  .chat-body {
-    height: calc(100% - 120px);
-    padding: 20px;
-  }
-
-  .chat-footer {
-    padding: 10px 15px;
-  }
-}
