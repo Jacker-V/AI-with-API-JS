@@ -562,41 +562,7 @@ body.show-emoji-picker em-emoji-picker{
 
 /* Responsive media for mobile */
 
-@media (max-width : 520px){
-    #chatbot-toggler{
-        right: 20px;
-        bottom: 20px;
-    }
-    #chatbot-toggler-wether{
-        right: 20px;
-        bottom: 100px;
-    }
 
-    .chatbot-popup{
-        right: 0;
-        bottom: 0;
-        height: 100%;
-        border-radius: 0;
-        width: 100%;
-    }
-
-    .chatbot-popup .chat-header{
-        padding: 12px 15px;
-    }
-
-    .chat-body{
-        height: calc(90% - 55px);
-        padding: 25px 15px;
-    }
-
-    .chat-footer{
-        padding: 10px 15px 15px;
-    }
-
-    .chat-form .file-upload-wrapper.file-uploaded #file-cancel{
-        opacity: 0;
-    }
-}
 
 :root {
     --color-primary: #5C56E1;
@@ -968,3 +934,130 @@ Tuy nhiên, phần dư sẽ bị cắt đi nếu cần. */
     text-align: center;
 }
 
+@media (max-width : 520px){
+    #chatbot-toggler{
+        right: 20px;
+        bottom: 20px;
+    }
+
+    #chatbot-toggler-weather{
+        right: 20px;
+        bottom: 90px;
+    }
+
+    #chatbot-toggler-gen{
+        right: 20px;
+        bottom: 160px;
+    }
+
+    #chatbot-toggler-wether{
+        right: 20px;
+        bottom: 100px;
+    }
+
+    .chatbot-popup{
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .card{
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        /* border-radius: 0; */
+        width: 100%;
+    }
+
+    .container{
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        border-radius: 0;
+        width: 100%;
+    }
+    /* .card {
+        padding: 20px 15px;
+        margin: 20px auto;
+        border-radius: 0;
+    } */
+
+    .search {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search input {
+        height: 50px;
+        font-size: 16px;
+        padding: 8px 20px;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .search button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .search button img {
+        width: 14px;
+    }
+
+    .weather-icon {
+        width: 120px;
+        margin-top: 20px;
+    }
+
+    .weather h1 {
+        font-size: 50px;
+    }
+
+    .weather h2 {
+        font-size: 30px;
+    }
+
+    .details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .col {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .col img {
+        width: 32px;
+    }
+
+    .humidity, .wind {
+        font-size: 22px;
+    }
+
+    .error {
+        font-size: 13px;
+        margin-left: 5px;
+    }
+
+    .chatbot-popup .chat-header{
+        padding: 12px 15px;
+    }
+
+    .chat-body{
+        height: calc(90% - 55px);
+        padding: 25px 15px;
+    }
+
+    .chat-footer{
+        padding: 10px 15px 15px;
+    }
+
+    .chat-form .file-upload-wrapper.file-uploaded #file-cancel{
+        opacity: 0;
+    }
+}
