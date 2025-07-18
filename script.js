@@ -194,7 +194,7 @@ const countSelect = document.getElementById("count-select");
 const ratioSelect = document.getElementById("ratio-select");
 const gridGallery = document.querySelector(".gallery-grid");
 
-const API_KEY_Gen = "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";// Hugging face API key after sign up
+const API_KEY_Gen = "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";// Hugging face API key after sign up
 
 
 const examplePrompts = [
